@@ -29,20 +29,12 @@ The project supports multiple model architectures including **GPT, Gemma, LLaMA,
 ---
 
 ## 📂 Repository Structure
-Scripts/
-├── Fine_tune_Gemma3.ipynb # Fine-tuning script for Gemma3 models
-├── Fine_tune_LLaMa.ipynb # Fine-tuning script for LLaMA models
-├── Fine_tune_Qwen.ipynb # Fine-tuning script for Qwen models
-├── Gemma3.ipynb # Evaluation script for Gemma3 models
-└── QwenVL.ipynb # Evaluation script for Qwen-VL models
-
-- **Input format**: PNG clock images with filenames encoding the time.  
-  Example: `12_30_06.png` → 12:30:06.  
-- **Supported clock types**:
-  - Standard clocks  
-  - Distorted clocks  
-  - Thin-hands clocks  
-  - Real clock images  
+```text
+├── Scripts/                       # Jupyter notebooks for model evaluation and fine-tuning  
+├── Dataset_for_experiment/        # Clock image datasets (standard, distorted, thin_hands, real_clocks)  
+├── Results/                       # Excel files with model predictions and evaluation results  
+└── Finetuned_models/              # Saved fine-tuned model adapters    
+```text
 
 ---
 
