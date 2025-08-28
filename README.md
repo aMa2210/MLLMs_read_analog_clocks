@@ -34,7 +34,7 @@ The project supports multiple model architectures including **GPT, Gemma, LLaMA,
 ├── Dataset_for_experiment/        # Clock image datasets (standard, distorted, thin_hands, real_clocks)  
 ├── Results/                       # Excel files with model predictions and evaluation results  
 └── Finetuned_models/              # Saved fine-tuned model adapters    
-```text
+```
 
 ---
 
