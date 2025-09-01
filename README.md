@@ -44,9 +44,20 @@ Run the evaluation notebooks to test pre-trained models on clock reading tasks.
 - Example: [`QwenVL.ipynb`](Scripts/QwenVL.ipynb)  
 - Results: Saved as **Excel files** with model predictions vs. ground truth.  
 
-### 2. Fine-tuning
-Use the fine-tuning notebooks to train models on your custom clock dataset.  
-- Proper data formatting and collation functions included.  
-- Example: [`Fine_tune_LLaMa.ipynb`](Scripts/Fine_tune_LLaMa.ipynb)
+## 2. Fine-tuning  
+
+### Fine-tuning OpenAI Models  
+1. Configure your **OpenAI API key** in the system environment variables.  
+2. Run [`Scripts/Generate_jsonl_For_FT.py`](Scripts/Generate_jsonl_For_FT.py) to generate a JSONL dataset.  
+3. Update the `file` path in [`Scripts/Fine-tuneGPT.py`](Scripts/Fine-tuneGPT.py) to point to the generated JSONL file, then run the script.  
+4. Use [`Scripts/AccessFinetunedModel.py`](Scripts/AccessFinetunedModel.py) to check the fine-tuning job status.  
+5. Once fine-tuning is completed, replace the `model` parameter in [`Scripts/Openai.ipynb`](Scripts/Openai.ipynb) with the fine-tuned model ID, and proceed with evaluation.  
+
+### Fine-tuning Open-Source Models  
+1. Configure your **Hugging Face token** in the first cell of the target notebook (e.g., [`Scripts/Fine_tune_Gemma3.ipynb`](Scripts/Fine_tune_Gemma3.ipynb)).  
+2. In the third cell, set the values of `prefix` and `folder_name` so that `Data/{prefix}/{folder_name}` points to your fine-tuning dataset.  
+3. Run all cells sequentially. The fine-tuned model files will be saved in the `Finetuned_models` directory.  
+4. Update the `prefix` variable in the evaluation notebook (e.g., [`Scripts/Gemma3-finetuned.ipynb`](Scripts/Gemma3-finetuned.ipynb)) to ensure that `adapter_path` points to the saved model path.  
+5. Run the evaluation notebook to complete the process.  
 
 ---
