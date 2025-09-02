@@ -10,7 +10,7 @@ file = client.files.create(
 fine_tune_job = client.fine_tuning.jobs.create(
     training_file=file.id,
     model="gpt-4.1-2025-04-14",
-    suffix='Tairan_standard_300',
+    suffix='',
   )
 
 job_id = fine_tune_job.id
